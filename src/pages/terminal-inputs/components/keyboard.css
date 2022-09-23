@@ -1,0 +1,39 @@
+.key {
+    margin: 10px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 25px 35px;
+    font-size: 30px;
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 550;
+    color: #1F2C49;
+    box-shadow: 3px 3px 12px rgba(191, 191, 191, 0.14);
+    transition: 0.3s;
+}
+
+.key:active {
+    transform: scale(0.97);
+    background-color: #f3f3f3;
+}
+
+.letters {
+    display: flex;
+    justify-content: center;
+}
+
+.space {
+    padding: 15px 230px;
+}
+
+.clean {
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+}
+
+.clean-img {
+    width: 22px;
+    margin-right: 10px;
+}

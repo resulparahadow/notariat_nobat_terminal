@@ -1,0 +1,54 @@
+body {
+    display: flex;
+}
+
+.header-container {
+    position: relative;
+    top: 3vh;
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    width: 96vw;
+    justify-content: space-between;
+    margin: 0;
+    height: 10vh;
+}
+
+.header-left-img {
+    width: 85px;
+    height: 100px;
+}
+
+.header-flag-img {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    z-index: 0;
+}
+
+.header-emblem-img {
+    position: relative;
+    right: 40px;
+    top: 10px;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+.header-text {
+    font-family: 'Archivo';
+    font-style: bold;
+    font-weight: 500;
+    font-size: 30px;
+    color: #1F2C49;
+    margin: 5px;
+    width: auto;
+}
+
+.header-text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}

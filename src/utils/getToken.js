@@ -1,0 +1,4 @@
+export const getToken = () => {
+    const token = 'KSJFDKL2389JF928J2938J239FJSDFJ923FJASDJLJF092J32903JF2EFJ293JF2JF090394F02J';
+    return token;
+}

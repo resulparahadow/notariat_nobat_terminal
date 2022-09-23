@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import './App.css';
+import Header from './components/header';
+import TerminalCategory from "./pages/terminal-category/terminal-category";
+import NameInput from "./pages/terminal-inputs/name-input";
+import TerminalLanguage from './pages/terminal-language/terminal-language';
+import TerminalSubcategories from "./pages/noterial-actions/noterial-actions";
+import NumberInput from './pages/terminal-inputs/number-input';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/language' element={<TerminalLanguage />} />
+        <Route path='/category' element={<TerminalCategory />} />
+        <Route path='/noterialAction' element={<TerminalSubcategories />} />
+        <Route path='/name' element={<NameInput />} />
+        <Route path='/number' element={<NumberInput />} />
+        <Route path='*' element={<Navigate to='/language' />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

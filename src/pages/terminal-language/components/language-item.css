@@ -1,0 +1,35 @@
+.language-flag {
+    margin: 0 50px;
+    width: 85px;
+    height: 55px;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45vw;
+    background: #FFFFFF;
+    padding: 5px 25px;
+    border-radius: 15px;
+    margin: 30px;
+    font-size: 45px;
+    color: #434343;
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.language:active {
+    transform: scale(0.97);
+    background-color: #f3f3f3;
+}
+
+.language-text {
+    width: 23vw;
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 400;
+}

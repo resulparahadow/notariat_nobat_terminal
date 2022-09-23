@@ -1,0 +1,15 @@
+.terminal-language-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin-top: 8vh;
+}
+
+h2 {
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    color: #1F2C49;
+}

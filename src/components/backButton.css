@@ -1,0 +1,19 @@
+.button {
+    background-color: #00975C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    font-family: 'Archivo';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    border: none;
+    box-shadow: 2px 2px 13px rgba(0, 99, 61, 0.31);
+    border-radius: 10px;
+    padding: 10px 25px;
+}
+
+.back-arrow {
+    margin-right: 20px;
+}
