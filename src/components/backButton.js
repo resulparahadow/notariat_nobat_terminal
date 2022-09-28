@@ -8,7 +8,7 @@ const BackButton = () => {
     const navigate = useNavigate();
     return (
         <button className='button' onClick={() => navigate(-1)}>
-            <img style={{ marginRight: "15px", width: "35px" }} src={back} alt='vector' />
+            <img style={{ marginRight: "15px", width: "25px" }} src={back} alt='vector' />
             {getLanguage() == 'tm' ? "Yza" : "Назад"}
         </button>
     )

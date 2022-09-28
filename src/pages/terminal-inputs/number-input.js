@@ -1,9 +1,12 @@
 import { React, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 import { getLanguage } from '../../utils/getLanguage';
 import BackButton from '../../components/backButton';
 import Keyboard from './components/keyboard';
 import './number-input.css';
+// import 'antd/dist/antd.css';
 import { getToken } from '../../utils/getToken';
 import { axiosInstance } from '../../utils/axios';
 
@@ -34,8 +37,10 @@ const NumberInput = () => {
         const fullname = localStorage.getItem('terminal-fullname');
         const group_id = localStorage.getItem('terminal-id');
         const phone_number = text == "" ? null : text;
-        navigate('/language');
         axiosInstance.post('api/v2/store_ticket', { fullname, phone_number, group_id }, { headers: { Authorization: `Bearer ${getToken()}` } }).then(() => {
+            axios.get('http://notariat_terminal_qrcode.test/?ticket_number_with_group=A12..')
+            // message.success("Üstünlikli nobata goýuldy!");
+            navigate('/language');
             console.log(fullname, group_id, text);
         }).catch((err) => console.log(err))
     }
@@ -53,6 +58,7 @@ const NumberInput = () => {
                     {getLanguage() == 'tm' ? "Tassyklamak" : "Утверждать"}
                 </button>
             </div>
+            <ToastContainer />
         </div>
     )
 }

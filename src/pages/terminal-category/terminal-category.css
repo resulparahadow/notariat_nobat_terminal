@@ -5,7 +5,7 @@
     align-content: center;
     justify-content: center;
     justify-self: center;
-    margin: 12vh 5vw 15vh 5vw;
+    margin: 12vh 5vw 14vh 5vw;
 }
 
 .category-item-container {
@@ -14,9 +14,9 @@
     background-color: #FFFFFF;
     box-shadow: 3px 3px 12px rgba(191, 191, 191, 0.14);
     border-radius: 15px;
-    margin: 25px;
-    padding: 27px 35px;
-    width: 30vw;
+    margin: 15px;
+    padding: 20px 45px;
+    width: 35vw;
     cursor: pointer;
     transition: 0.5s;
 }
@@ -65,9 +65,9 @@
     font-family: 'Archivo';
     font-style: normal;
     color: #434343;
-    font-size: 35px;
+    font-size: 2.6rem;
     margin-left: 15px;
-    line-height: 40px;
+    line-height: 45px;
 }
 
 .category-buttons-container {
@@ -88,7 +88,7 @@
     border: none;
     box-shadow: 2px 2px 13px rgba(0, 99, 61, 0.31);
     border-radius: 15px;
-    padding: 25px 35px;
+    padding: 20px 30px;
 }
 
 .galam-icon {

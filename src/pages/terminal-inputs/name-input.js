@@ -45,8 +45,8 @@ const NameInput = () => {
             <div className='button-container'>
                 <BackButton className='back-button' />
                 <button className='button' onClick={nextHandle}>
-                    <img style={{ marginRight: "8px", width: "17px", transform: "rotate(180deg)" }} src={back} alt='vector' />
                     {getLanguage() == 'tm' ? "Indiki" : "Следующий"}
+                    <img style={{ marginLeft: "12px", width: "25px", transform: "rotate(180deg)" }} src={back} alt='vector' />
                 </button>
             </div>
         </div>

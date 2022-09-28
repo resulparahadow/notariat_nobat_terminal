@@ -1,14 +1,15 @@
 .language-flag {
     margin: 0 50px;
-    width: 85px;
-    height: 55px;
+    width: 6.5rem;
+    height: 4rem;
+    box-shadow: 0 0 1px 0.5px;
 }
 
 .language {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 45vw;
+    width: 60vw;
     background: #FFFFFF;
     padding: 5px 25px;
     border-radius: 15px;
@@ -20,6 +21,7 @@
     font-weight: 400;
     cursor: pointer;
     transition: 0.5s;
+    box-shadow: 3px 3px 12px rgba(191, 191, 191, 0.14);
 }
 
 .language:active {
@@ -28,8 +30,9 @@
 }
 
 .language-text {
-    width: 23vw;
+    width: 40vw;
     font-family: 'Archivo';
     font-style: normal;
     font-weight: 400;
+    font-size: 4rem;
 }

@@ -5,11 +5,11 @@ import './terminal-language.css';
 import LanguageItem from './components/language-item';
 
 const TerminalLanguage = () => {
-    return(
+    return (
         <div className='terminal-language-container'>
             <h2>Dil saýlaň</h2>
             <div>
-                <LanguageItem img={turkmen} short='tm' language='Turkmen dili' />
+                <LanguageItem img={turkmen} short='tm' language='Türkmen dili' />
                 <LanguageItem img={russian} short='ru' language='Русский язык' />
             </div>
         </div>

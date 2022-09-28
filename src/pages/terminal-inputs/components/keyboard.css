@@ -14,7 +14,8 @@
 }
 
 .key:active {
-    transform: scale(0.97);
+    transform: scale(0.9);
+    opacity: 0.3;
     background-color: #f3f3f3;
 }
 

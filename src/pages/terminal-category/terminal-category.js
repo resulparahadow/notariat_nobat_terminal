@@ -1,50 +1,25 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import './terminal-category.css';
 import edit from '../../img/edit.png';
 import BackButton from '../../components/backButton';
 import { useNavigate } from 'react-router-dom';
 import { getLanguage } from '../../utils/getLanguage';
+import { axiosInstance } from '../../utils/axios';
+import { getToken } from '../../utils/getToken';
 
 const TerminalCategory = () => {
     const navigate = useNavigate();
-    const category = [
-        {
-            letter: {
-                value: "A",
-                className: "letter-a"
-            },
-            content_tm: "Ynanç haty, nusga we gol tassyklamak",
-            content_ru: "Доверенности, заверении копий и подленности подпись",
-            id: 1
-        },
-        {
-            letter: {
-                value: "B",
-                className: "letter-b"
-            },
-            content_tm: "Satyn almak-satmak, sowgat etmek, karz we girew",
-            content_ru: "Пупля-продажа, дарение, залог и кредит",
-            id: 2
-        },
-        {
-            letter: {
-                value: "Ç",
-                className: "letter-c"
-            },
-            content_tm: "Miras we wesýetnama",
-            content_ru: "Наследство и завещания",
-            id: 3
-        },
-        {
-            letter: {
-                value: "D",
-                className: "letter-d"
-            },
-            content_tm: "Hukuk maslahaty",
-            content_ru: "Правовая помощь",
-            id: 4
-        }
-    ]
+
+    const [category, setCategory] = useState(null);
+
+    useEffect(() => {
+        axiosInstance.get('api/v2/groups', { headers: { Authorization: `Bearer ${getToken()}` } }).then((res) => {
+            console.log(res.data.data.groups);
+            setCategory(res.data.data.groups);
+        }).catch((err) => {
+            console.log(err);
+        });
+    }, [])
 
     const language = getLanguage();
 
@@ -57,11 +32,13 @@ const TerminalCategory = () => {
         <div className='super-div'>
             <div className='category-container'>
                 {
-                    category.map(item =>
-                        <div key={item.letter.value} onClick={() => handleClick(item)} className='category-item-container'>
-                            <h2 className={`letter ${item.letter.className}`}>{item.letter.value}</h2>
-                            <p className='category-content'>{language == 'tm' ? item.content_tm : item.content_ru}</p>
+                    category?.map((item, index) => {
+                        let letter = item.ticketLetter;
+                        return <div key={index} onClick={() => handleClick(item)} className='category-item-container'>
+                            <h2 className={`letter letter-${letter.toLowerCase()}`}>{letter}</h2>
+                            <p className='category-content'>{language == 'tm' ? item.group_name_tm : item.group_name_ru}</p>
                         </div>
+                    }
                     )
                 }
             </div>
