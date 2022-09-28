@@ -6,14 +6,14 @@ import NameInput from "./pages/terminal-inputs/name-input";
 import TerminalLanguage from './pages/terminal-language/terminal-language';
 import TerminalSubcategories from "./pages/noterial-actions/noterial-actions";
 import NumberInput from './pages/terminal-inputs/number-input';
-import { categoryReq } from "./utils/requests";
+import { categoryReq, noterialReq } from "./utils/requests";
 import './App.css';
 
 function App() {
 
   useEffect(() => {
-    var interval = setInterval(() => categoryReq(), 1000 * 60 * 10);
-    return () => clearInterval(interval);
+    categoryReq();
+    noterialReq();
   }, [])
 
   return (

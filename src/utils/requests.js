@@ -7,3 +7,10 @@ export const categoryReq = async () => {
     localStorage.setItem('terminal-category', JSON.stringify(group));
     setInterval(() => categoryReq(), 1000 * 60 * 10);
 }
+
+export const noterialReq = async () => {
+    const noterialData = await axiosInstance.get('api/v2/document_types', { headers: { Authorization: `Bearer ${getToken()}` } });
+    const noterial = noterialData.data.data.document_types;
+    localStorage.setItem('terminal-noterial', JSON.stringify(noterial));
+    setInterval(() => noterialReq(), 1000 * 60 * 10);
+}

@@ -12,17 +12,12 @@ import { BiFontSize } from "react-icons/bi";
 const TerminalCategory = () => {
     const { setIsBig, isBig } = useContext(FontContext);
     const navigate = useNavigate();
-    console.log(isBig)
 
     const [category, setCategory] = useState(null);
 
     useEffect(() => {
-        axiosInstance.get('api/v2/groups', { headers: { Authorization: `Bearer ${getToken()}` } }).then((res) => {
-            console.log(res.data.data.groups);
-            setCategory(res.data.data.groups);
-        }).catch((err) => {
-            console.log(err);
-        });
+        const category = JSON.parse(localStorage.getItem('terminal-category'));
+        setCategory(category);
     }, [])
 
     const language = getLanguage();

@@ -14,12 +14,8 @@ const TerminalSubcategories = () => {
     const { setIsBig, isBig } = useContext(FontContext);
 
     useEffect(() => {
-        axiosInstance.get('api/v2/document_types', { headers: { Authorization: `Bearer ${getToken()}` } }).then((res) => {
-            console.log(res.data.data.document_types);
-            setSubCategory(res.data.data.document_types);
-        }).catch((err) => {
-            console.log(err);
-        });
+        const noterial = JSON.parse(localStorage.getItem('terminal-noterial'))
+        setSubCategory(noterial);
     }, []);
 
     const handleClick = (item) => {
