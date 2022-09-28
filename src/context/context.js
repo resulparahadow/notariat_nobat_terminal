@@ -1,25 +1,13 @@
-import { createContext, useReducer, useEffect, useState } from 'react';
-import AuthReducer from './AuthReducer';
+import { createContext, useState } from 'react';
 
-//coookie 
+export const FontContext = createContext(null);
 
-const INITIAL_STATE = {
-    data: null
-};
-
-export const AuthContext = createContext(INITIAL_STATE);
-
-export const AuthContextProvider = ({ children }) => {
-    const [id, setId] = useState(null);
-    const [fullName, setFullNAme] = useState(null);
+export const FontContextProvider = ({ children }) => {
+    const [isBig, setIsBig] = useState(false);
 
     return (
-        <AuthContext.Provider
-            value={{
-
-            }}
-        >
+        <FontContext.Provider value={{ isBig, setIsBig }} >
             {children}
-        </AuthContext.Provider>
+        </FontContext.Provider>
     )
 }

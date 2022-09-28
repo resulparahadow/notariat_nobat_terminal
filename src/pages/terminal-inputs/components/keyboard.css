@@ -1,9 +1,12 @@
 .key {
+    text-align: center;
     margin: 10px;
     background-color: white;
     border: none;
     border-radius: 10px;
     padding: 25px 35px;
+    width: 6rem;
+    height: 6rem;
     font-size: 30px;
     font-family: 'Archivo';
     font-style: normal;
@@ -14,7 +17,7 @@
 }
 
 .key:active {
-    transform: scale(0.9);
+    transform: scale(0.8);
     opacity: 0.3;
     background-color: #f3f3f3;
 }
@@ -25,16 +28,27 @@
 }
 
 .space {
-    padding: 15px 230px;
+    /* padding: 15px 230px; */
+    width: 35rem;
 }
 
 .clean {
     display: flex;
     align-items: center;
     font-size: 23px;
+    width: 12rem;
 }
 
 .clean-img {
     width: 22px;
     margin-right: 10px;
+    transition: all 0.3s;
+}
+
+.key-big {
+    font-size: 3rem;
+}
+
+.clean-img-big {
+    width: 30px;
 }

@@ -16,13 +16,14 @@
     border-radius: 15px;
     margin: 15px;
     padding: 20px 45px;
+    height: 25vh;
     width: 35vw;
     cursor: pointer;
     transition: 0.5s;
 }
 
 .category-item-container:active {
-    transform: scale(0.98);
+    transform: scale(0.9);
     background-color: #f3f3f3;
 }
 
@@ -41,9 +42,12 @@
     font-family: 'Archivo';
     font-style: normal;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 50px;
     margin-right: 10px;
+    transition: all 0.3s;
 }
+
+
 
 .letter-a {
     color: #3761ED;
@@ -68,6 +72,7 @@
     font-size: 2.6rem;
     margin-left: 15px;
     line-height: 45px;
+    transition: all 0.3s;
 }
 
 .category-buttons-container {
@@ -99,4 +104,14 @@
 .dash {
     position: relative;
     right: 9px;
+}
+
+/* big classes */
+
+.letter-big {
+    font-size: 65px;
+}
+
+.content-big {
+    font-size: 3rem;
 }

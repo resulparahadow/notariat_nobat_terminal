@@ -10,18 +10,21 @@
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 5vw;
+    transition: 0.3s;
+    cursor: pointer;
 }
 
 .subcategory-item:active {
-    transform: scale(0.98);
+    transform: scale(0.9);
     background-color: #f3f3f3;
+    opacity: 0.3;
 }
 
 .subcategory-item {
     transition: 0.5s;
     display: flex;
     width: 37vw;
-    height: 120px;
+    height: 130px;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
@@ -36,11 +39,19 @@
     font-style: normal;
     font-weight: 400;
     font-size: 30px;
-    line-height: 35px;
+    line-height: 40px;
     text-align: center;
     color: #1F2C49;
+    transition: all 0.3s;
 }
 
 .noterial-back {
     margin: -30px
+}
+
+
+/* big */
+
+.content-big {
+    font-size: 3rem;
 }

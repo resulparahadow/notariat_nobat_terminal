@@ -1,7 +1,9 @@
-import { React, useState } from 'react';
+import { React, useState, useContext } from 'react';
+import { FontContext } from '../../context/context';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
+import { BiFontSize } from 'react-icons/bi';
 import { getLanguage } from '../../utils/getLanguage';
 import BackButton from '../../components/backButton';
 import Keyboard from './components/keyboard';
@@ -11,6 +13,7 @@ import { getToken } from '../../utils/getToken';
 import { axiosInstance } from '../../utils/axios';
 
 const NumberInput = () => {
+    const { setIsBig, isBig } = useContext(FontContext);
     const [text, setText] = useState('');
     const navigate = useNavigate();
     const write = (number) => {
@@ -48,12 +51,13 @@ const NumberInput = () => {
     return (
         <div className='keyboard-input-container'>
             <div className='number-container'>
-                <h2 className='title'>+993</h2>
-                <input className='number-input' value={text} type='text' placeholder='66 123123' />
+                <h2 className={`title ${isBig ? "title-big" : ""}`}>+993</h2>
+                <input className={`number-input ${isBig ? "number-input-big" : ""}`} value={text} type='text' placeholder='66 123123' />
             </div>
             <Keyboard writeFunction={write} clearFunction={clear} />
             <div className='button-container'>
                 <BackButton />
+                <BiFontSize style={{ fontSize: "4.3rem", color: "red", marginBottom: "5px" }} onClick={() => setIsBig(!isBig)} />
                 <button className='button' onClick={confirm}>
                     {getLanguage() == 'tm' ? "Tassyklamak" : "Утверждать"}
                 </button>
