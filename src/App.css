@@ -2,3 +2,49 @@
     display: flex;
     justify-content: center;
 }
+
+/* .tost {
+    font-size: 2rem;
+    padding: 150px;
+}
+
+.Toastify__toast-container {
+    width: auto;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.Toastify__toast {
+    padding: 300px;
+}
+
+.Toastify__toast-body {
+    margin: 10px;
+} */
+
+.Toastify__toast--error {
+    /* border: 1px solid #EB5757; */
+    /* border-radius: 50px !important; */
+    /* background: #FAE1E2 !important; */
+    font-size: 2rem;
+    width: 30rem;
+    right: 5rem;
+}
+
+.Toastify__toast--error::after {
+    /* content: url('../assets/images/svg/closeToast.svg'); */
+    position: absolute;
+    color: #333333;
+    font-size: 30px;
+    font-weight: 700;
+    left: 265px;
+    padding-top: 14px !important;
+}
+
+.Toastify__toast--error::before {
+    /* content: url("../assets/images/svg/errorToast.svg"); */
+    position: relative;
+    z-index: 100000;
+    left: 12px;
+    top: 6px;
+}

@@ -5,7 +5,8 @@
     align-content: center;
     justify-content: center;
     justify-self: center;
-    margin: 12vh 5vw 14vh 5vw;
+    margin: 12vh auto;
+    width: 97vw;
 }
 
 .category-item-container {
@@ -16,7 +17,7 @@
     border-radius: 15px;
     margin: 15px;
     padding: 20px 45px;
-    height: 25vh;
+    height: 22vh;
     width: 35vw;
     cursor: pointer;
     transition: 0.5s;
@@ -28,8 +29,8 @@
 }
 
 .super-div {
-    height: 60vh;
-    /* background-color: #434343; */
+    display: flex;
+    flex-direction: column;
 }
 
 .letter {

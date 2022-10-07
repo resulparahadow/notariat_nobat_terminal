@@ -1,0 +1,12 @@
+.content {
+    color: #1F2C49;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.not-working-container {
+    justify-content: center;
+    display: flex;
+    height: 70vh;
+    align-items: center;
+}

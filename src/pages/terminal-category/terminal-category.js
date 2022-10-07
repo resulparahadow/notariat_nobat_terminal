@@ -35,7 +35,7 @@ const TerminalCategory = () => {
                         let letter = item.ticketLetter;
                         return <div key={index} onClick={() => handleClick(item)} className='category-item-container'>
                             <h2 className={`letter ${isBig ? "letter-big" : ""} letter-${letter.toLowerCase()}`}>{letter}</h2>
-                            <p className={`category-content ${isBig ? "content-big" : ""}`}>{language == 'tm' ? item.group_name_tm : item.group_name_ru}</p>
+                            <p className={`category-content ${!isBig ? "content-big" : ""}`}>{language == 'tm' ? item.group_name_tm : item.group_name_ru}</p>
                         </div>
                     }
                     )

@@ -7,6 +7,7 @@ import Keyboard from './components/keyboard';
 import { getLanguage } from '../../utils/getLanguage';
 import back from '../../img/backWhite.png';
 import './name-input.css'
+import { toast } from 'react-toastify';
 
 const NameInput = () => {
     const { setIsBig, isBig } = useContext(FontContext);
@@ -34,14 +35,17 @@ const NameInput = () => {
         if (text.length > 0) {
             localStorage.setItem("terminal-fullname", text);
             navigate('/number');
+            return
         }
+
+        toast.error(localStorage.getItem('terminal') == 'tm' ? "Adyňyzy we familiýaňyzy girizmegiňizi haýyş edýäris" : "Просим ввести имя и фамилию");
     }
 
     return (
         <div className='myDiv'>
             <div className='input-name-container'>
                 <div className={`input-container ${isBig ? "input-container-big" : ""}`}>
-                    <input className={`name-input ${isBig ? "name-input-big" : ""}`} value={text} type='text' placeholder='Ady, familiýasy' />
+                    <input className={`name-input ${isBig ? "name-input-big" : ""}`} value={text} type='text' placeholder='Ady, familiýasy' readOnly />
                 </div>
                 <Keyboard writeFunction={write} clearFunction={clear} />
             </div>

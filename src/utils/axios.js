@@ -1,6 +1,7 @@
 import axios from 'axios'
+import { getToken } from './getToken';
 
-const BASE_URL = "http://95.85.120.218:8181/";
+const BASE_URL = "http://10.20.20.77:8095/";
 
 const axiosInstance = axios.create({
     baseURL: BASE_URL,
@@ -8,7 +9,8 @@ const axiosInstance = axios.create({
 
     headers: {
         'Content-Type': 'application/json',
-        'Accept': "*/*",
+        'Accept': "application/json",
+        'Authorization': `Bearer ${getToken()}`
     }
 })
 export { axiosInstance } 

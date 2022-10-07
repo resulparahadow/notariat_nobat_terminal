@@ -19,7 +19,7 @@ const TerminalSubcategories = () => {
     }, []);
 
     const handleClick = (item) => {
-        localStorage.setItem('terminal-id', item.id);
+        localStorage.setItem('terminal-id', item.group_id);
         navigate('/name');
     }
 
@@ -32,7 +32,7 @@ const TerminalSubcategories = () => {
                     </div>
                 )}
             </div>
-            <div className='category-buttons-container'>
+            <div className='subcategory-buttons-container'>
                 <BackButton />
                 <BiFontSize style={{ fontSize: "4.3rem", color: "red", marginBottom: "5px" }} onClick={() => setIsBig(!isBig)} />
             </div>
