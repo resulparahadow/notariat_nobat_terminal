@@ -7,7 +7,7 @@ import { getLanguage } from '../../utils/getLanguage';
 import BackButton from '../../components/backButton';
 import Keyboard from './components/keyboard';
 import './number-input.css';
-// import 'antd/dist/antd.css';
+// import 'antd/di  st/antd.css';
 import { axiosInstance } from '../../utils/axios';
 import { toast } from 'react-toastify';
 
@@ -55,9 +55,9 @@ const NumberInput = () => {
             navigate('/language');
             let url = `http://notariat_terminal_qrcode.test/?ticket_number_with_group=${ticket_number_with_group}&ticket_info=${ticket_info}&group_id=${group_id}`;
             if (lang == "tm") {
-                url = url + `&group_name_tm=${group_name_tm}`;
+                url = url + `&lang=${group_name_tm}`;
             } else {
-                url = url + `&group_name_ru=${group_name_ru}`;
+                url = url + `&lang=${group_name_ru}`;
             }
             await axios.get(url);
         } catch (err) {
