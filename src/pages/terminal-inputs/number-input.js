@@ -53,11 +53,11 @@ const NumberInput = () => {
             const group_name_ru = res.data.data.ticket.group.group_name_ru;
             toast.success(lang == "tm" ? "Üstünlikli nobata goýuldyňyz!" : "Üstünlikli nobata goýuldyňyz!");
             navigate('/language');
-            let url = `http://notariat_terminal_qrcode.test/?ticket_number_with_group=${ticket_number_with_group}&ticket_info=${ticket_info}&group_id=${group_id}`;
+            let url = `http://notariat_terminal_qrcode.test/?ticket_number_with_group=${ticket_number_with_group}&ticket_info=${ticket_info}&group_id=${group_id}&lang=${lang}`;
             if (lang == "tm") {
-                url = url + `&lang=${group_name_tm}`;
+                url = url + `&group_name_tm=${group_name_tm}`;
             } else {
-                url = url + `&lang=${group_name_ru}`;
+                url = url + `&group_name_ru=${group_name_ru}`;
             }
             await axios.get(url);
         } catch (err) {
