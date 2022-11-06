@@ -5,8 +5,7 @@ import './not-working.css';
 const NotWorking = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const message = location.state.message;
-    console.log(message)
+    const message = location.state?.message;
     const language = localStorage.getItem("terminal");
     let txt = '';
 
@@ -16,11 +15,17 @@ const NotWorking = () => {
         } else {
             txt = 'Терминал отключен администратором!';
         }
-    } else {
+    } else if (message === 'TIME_IS_UP') {
         if (language == 'tm') {
             txt = 'Kategoriýanyň iş wagty gutardy!';
         } else {
             txt = 'Категория устарела!';
+        }
+    } else {
+        if (language == 'tm') {
+            txt = 'Ýalňyşlyk ýüze çykdy. Gaýtadan synanyşmagyňyzy haýyş edýäris!';
+        } else {
+            txt = 'Произошла ошибка. Пожалуйста, попробуйте еще раз!';
         }
     }
 

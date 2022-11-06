@@ -10,12 +10,17 @@
     width: 5.5rem;
     height: 5.5rem;
     font-size: 30px;
-    font-family: 'Archivo';
-    font-style: normal;
-    font-weight: 550;
     color: #1F2C49;
     box-shadow: 3px 3px 12px rgba(191, 191, 191, 0.14);
     transition: 0.3s;
+}
+
+.letters_russian{
+    font-weight: 500;
+}
+
+.letters_turkmen{
+    font-weight: 550;
 }
 
 .key:active {
@@ -34,11 +39,18 @@
     width: 35rem;
 }
 
-.clean {
+.clean_tm, .clean_ru {
     display: flex;
     align-items: center;
     font-size: 30px;
+}
+
+.clean_tm {
     width: 12rem;
+}
+
+.clean_ru {
+    width: 16rem;
 }
 
 .clean-img {

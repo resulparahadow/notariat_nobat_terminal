@@ -1,12 +1,10 @@
 import { React, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BiFontSize } from "react-icons/bi";
 import { FontContext } from '../../context/context';
 import BackButton from '../../components/backButton';
 import { getLanguage } from '../../utils/getLanguage';
-import { axiosInstance } from '../../utils/axios';
-import { getToken } from '../../utils/getToken';
 import './noterial-actions.css'
+import FontButton from '../../components/fontButton';
 
 const TerminalSubcategories = () => {
     const navigate = useNavigate();
@@ -14,8 +12,18 @@ const TerminalSubcategories = () => {
     const { setIsBig, isBig } = useContext(FontContext);
 
     useEffect(() => {
-        const noterial = JSON.parse(localStorage.getItem('terminal-noterial'))
-        setSubCategory(noterial);
+        const noterial = JSON.parse(localStorage.getItem('terminal-noterial'));
+        if (noterial.success) {
+            setSubCategory(noterial.noterials);
+        } else {
+            if (noterial.err === 1) {
+                window.location.href = '/disabled';
+            } else if (noterial.err === 2) {
+                window.location.href = '/timeUp';
+            } else {
+                window.location.href = '/notWorking';
+            }
+        }
     }, []);
 
     const handleClick = (item) => {
@@ -34,7 +42,7 @@ const TerminalSubcategories = () => {
             </div>
             <div className='subcategory-buttons-container'>
                 <BackButton />
-                <BiFontSize style={{ fontSize: "4.3rem", color: "red", marginBottom: "5px" }} onClick={() => setIsBig(!isBig)} />
+                <FontButton />
             </div>
         </div>
     )

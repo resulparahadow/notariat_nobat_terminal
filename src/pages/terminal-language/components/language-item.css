@@ -16,8 +16,6 @@
     margin: 30px;
     font-size: 45px;
     color: #434343;
-    font-family: 'Archivo';
-    font-style: normal;
     font-weight: 400;
     cursor: pointer;
     transition: 0.5s;
@@ -31,8 +29,6 @@
 
 .language-text {
     width: 40vw;
-    font-family: 'Archivo';
-    font-style: normal;
     font-weight: 400;
     font-size: 4rem;
 }

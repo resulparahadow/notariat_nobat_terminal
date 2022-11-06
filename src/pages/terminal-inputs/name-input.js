@@ -8,6 +8,7 @@ import { getLanguage } from '../../utils/getLanguage';
 import back from '../../img/backWhite.png';
 import './name-input.css'
 import { toast } from 'react-toastify';
+import FontButton from '../../components/fontButton';
 
 const NameInput = () => {
     const { setIsBig, isBig } = useContext(FontContext);
@@ -45,13 +46,13 @@ const NameInput = () => {
         <div className='myDiv'>
             <div className='input-name-container'>
                 <div className={`input-container ${isBig ? "input-container-big" : ""}`}>
-                    <input className={`name-input ${isBig ? "name-input-big" : ""}`} value={text} type='text' placeholder='Ady, familiýasy' readOnly />
+                    <input className={`name-input ${isBig ? "name-input-big" : ""}`} value={text} type='text' placeholder={`${getLanguage() == "tm" ? 'Ady, familiýasy' : 'Имя, фамилия'}`} readOnly />
                 </div>
                 <Keyboard writeFunction={write} clearFunction={clear} />
             </div>
             <div className='button-container'>
                 <BackButton className='back-button' />
-                <BiFontSize style={{ fontSize: "4.3rem", color: "red", marginBottom: "5px" }} onClick={() => setIsBig(!isBig)} />
+                <FontButton />
                 <button className='button' onClick={nextHandle}>
                     {getLanguage() == 'tm' ? "Indiki" : "Следующий"}
                     <img style={{ marginLeft: "12px", width: "25px", transform: "rotate(180deg)" }} src={back} alt='vector' />

@@ -3,12 +3,17 @@ import { FontContext } from '../../../context/context';
 import back from '../../../img/back.png';
 import './keyboard.css';
 
+
 const Keyboard = ({ writeFunction, clearFunction }) => {
-    const { setIsBig, isBig } = useContext(FontContext);
+    const language = localStorage.getItem('terminal');
+    const { isBig } = useContext(FontContext);
     const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-    const firstLine = ['Ä', "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Ň"];
-    const secondLine = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö"];
-    const thirdLine = ["Z", "Ü", "Ç", "Ý", "B", "N", "M", "Ş"];
+    const firstLine = language == 'tm' ? ['Ä', "W", "E", "R", "T", "Y", "U", "I", "O", "P", "Ň"]
+        : ["Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х", "Ъ"];
+    const secondLine = language == 'tm' ? ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ö"]
+        : ["Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э"];
+    const thirdLine = language == 'tm' ? ["Z", "Ü", "Ç", "Ý", "B", "N", "M", "Ş"]
+        : ["Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю"];
 
     const write = (e) => {
         writeFunction(e.target.value)
@@ -29,7 +34,7 @@ const Keyboard = ({ writeFunction, clearFunction }) => {
             <div className='letters'>
                 {
                     firstLine.map((item, index) =>
-                        <button className={`key ${isBig ? "key-big" : ""}`} key={index} value={item} onClick={(e) => write(e)}>{item}</button>
+                        <button style={{ fontFamily: "Archivo" }} className={`key ${language == "ru" ? 'letters_russian' : 'letters_turkmen'} ${isBig ? "key-big" : ""}`} key={index} value={item} onClick={(e) => write(e)}>{item}</button>
                     )
                 }
             </div>
@@ -51,7 +56,7 @@ const Keyboard = ({ writeFunction, clearFunction }) => {
                 <button className={`key ${isBig ? "key-big" : ""}`} value='-' onClick={(e) => write(e)}>-</button>
                 <button className={`key ${isBig ? "key-big" : ""}`} value='.' onClick={(e) => write(e)}>.</button>
                 <button className={`key space ${isBig ? "key-big" : ""}`} value=' ' onClick={(e) => write(e)}> </button>
-                <button className={`key clean ${isBig ? "key-big" : ""}`} onClick={clear}><img className={`clean-img ${isBig ? "clean-img-big" : ""}`} src={back} />Poz</button>
+                <button className={`key ${language == 'tm' ? 'clean_tm' : 'clean_ru'} ${isBig ? "key-big" : ""}`} onClick={clear}><img className={`clean-img ${isBig ? "clean-img-big" : ""}`} src={back} />{language == 'tm' ? 'Poz' : 'Очистить'}</button>
             </div>
         </div>
     )

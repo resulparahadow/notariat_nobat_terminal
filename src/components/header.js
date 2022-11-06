@@ -10,7 +10,7 @@ const Header = () => {
             <img className="header-left-img" src={adalat} alt="image" />
             <div className='header-text-container'>
                 <p className='header-text'>Türkmenistanyň Adalat ministrligi</p>
-                <p className='header-text'>Aşgabat şäher döwlet edarasy</p>
+                <p className='header-text'>Aşgabat şäher döwlet notarial edarasy</p>
             </div>
             <div className='flag-emblem-container'>
                 <img className='header-flag-img' src={flag} alt='image' />
