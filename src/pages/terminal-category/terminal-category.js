@@ -21,7 +21,10 @@ const TerminalCategory = () => {
                 if (item.visible && ((item.ticket_time_from < now && now < item.ticket_break_from) || (item.ticket_break_to < now && now < item.ticket_time_to))) {
                     filteredCategory.push(item);
                 }
-            })
+            });
+            if (filteredCategory.length === 0) {
+                window.location.href = '/timeUp'
+            }
         } else {
             if (category.err === 1) {
                 window.location.href = '/disabled';
