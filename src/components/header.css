@@ -11,7 +11,8 @@ body {
     width: 96vw;
     justify-content: space-between;
     margin: 0;
-    height: auto;
+    height: 12vh;
+    /* height: auto; */
 }
 
 .header-left-img {

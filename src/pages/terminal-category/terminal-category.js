@@ -18,7 +18,7 @@ const TerminalCategory = () => {
         if (category.success) {
             category.groups.forEach(item => {
                 let now = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
-                if (item.visible && ((item.ticket_time_from < now && now < item.ticket_break_from) || (item.ticket_break_to < now && now < item.ticket_time_to))) {
+                if (item.visible) {
                     filteredCategory.push(item);
                 }
             });

@@ -30,6 +30,19 @@ const NumberInput = () => {
         setText(slice.slice(0, -1));
     }
 
+    const notAttention = async (ticket_number_with_group, ticket_info, group_id, lang, selectedGroup) => {
+        const group_name_tm = selectedGroup.group_name_tm;
+        const group_name_ru = selectedGroup.group_name_ru;
+
+        let url = `http://notariat_terminal_qrcode.test/?ticket_number_with_group=${ticket_number_with_group}&ticket_info=${ticket_info}&group_id=${group_id}&lang=${lang}`;
+        if (lang == "tm") {
+            url = url + `&group_name_tm=${group_name_tm}`;
+        } else {
+            url = url + `&group_name_ru=${group_name_ru}`;
+        }
+        await axios.get(url);
+    }
+
     const confirm = async () => {
         setLoading(true);
         const fullname = localStorage.getItem('terminal-fullname');
@@ -51,14 +64,8 @@ const NumberInput = () => {
             const group_name_ru = res.data.data.ticket.group.group_name_ru;
             toast.success(lang == "tm" ? "Üstünlikli nobata goýuldyňyz!" : "Вы успешно встали в очередь!!");
             setLoading(false);
+            notAttention(ticket_number_with_group, ticket_info, group_id, lang, selectedGroup);
             navigate('/language');
-            let url = `http://notariat_terminal_qrcode.test/?ticket_number_with_group=${ticket_number_with_group}&ticket_info=${ticket_info}&group_id=${group_id}&lang=${lang}`;
-            if (lang == "tm") {
-                url = url + `&group_name_tm=${group_name_tm}`;
-            } else {
-                url = url + `&group_name_ru=${group_name_ru}`;
-            }
-            await axios.get(url);
         } catch (err) {
             setLoading(false);
             if (err.response?.data?.error === 'KIOSK_DISABLED_BY_ADMINSTRATOR') {

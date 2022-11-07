@@ -5,8 +5,9 @@
     align-content: center;
     justify-content: center;
     justify-self: center;
-    margin: 12vh auto;
+    margin: 10vh auto;
     width: 97vw;
+    height: 37.8rem;
 }
 
 .category-item-container {
@@ -31,6 +32,7 @@
 .super-div {
     display: flex;
     flex-direction: column;
+    align-content: space-between;
 }
 
 .letter {
@@ -56,7 +58,7 @@
     color: #C465D7;
 }
 
-.letter-c {
+.letter-ç {
     color: #31D1D3;
 }
 
@@ -79,6 +81,7 @@
     align-content: flex-end;
     justify-content: space-between !important;
     margin: auto 55px;
+    height: 10vh;
 }
 
 .button {

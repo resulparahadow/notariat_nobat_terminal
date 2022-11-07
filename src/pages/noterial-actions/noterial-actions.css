@@ -12,6 +12,7 @@
     margin: 0 3vw;
     transition: 0.3s;
     cursor: pointer;
+    height: 49rem;
 }
 
 .subcategory-item:active {
@@ -51,7 +52,7 @@
 .subcategory-buttons-container {
     display: flex;
     justify-content: space-between;
-    margin: -80px 40px
+    margin: 0 40px
 }
 
 
