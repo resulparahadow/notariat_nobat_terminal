@@ -17,7 +17,6 @@ const TerminalCategory = () => {
         let filteredCategory = [];
         if (category.success) {
             category.groups.forEach(item => {
-                let now = new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds();
                 if (item.visible) {
                     filteredCategory.push(item);
                 }
@@ -39,9 +38,21 @@ const TerminalCategory = () => {
 
     const language = getLanguage();
 
+    const timeFunction = (time) => {
+        if (time < 10) {
+            time = "0" + time;
+        }
+        return time;
+    }
+
     const handleClick = (item) => {
-        localStorage.setItem('selected-group', JSON.stringify({ group_id: item.id, group_name_tm: item.group_name_tm, group_name_ru: item.group_name_ru }));
-        navigate('/name');
+        const now = `${timeFunction(new Date().getHours())}:${timeFunction(new Date().getMinutes())}:${timeFunction(new Date().getSeconds())}`
+        if (item.work_time_from < now && now < item.work_time_to) {
+            localStorage.setItem('selected-group', JSON.stringify({ group_id: item.id, group_name_tm: item.group_name_tm, group_name_ru: item.group_name_ru }));
+            navigate('/name');
+        } else {
+            navigate('/notWorking', { state: { message: "TIME_IS_UP" } });
+        }
     }
 
 
