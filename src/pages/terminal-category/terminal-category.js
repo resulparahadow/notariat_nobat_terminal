@@ -47,7 +47,7 @@ const TerminalCategory = () => {
 
     const handleClick = (item) => {
         const now = `${timeFunction(new Date().getHours())}:${timeFunction(new Date().getMinutes())}:${timeFunction(new Date().getSeconds())}`
-        if (item.work_time_from < now && now < item.work_time_to) {
+        if (item.ticket_time_from < now && now < item.ticket_time_to) {
             localStorage.setItem('selected-group', JSON.stringify({ group_id: item.id, group_name_tm: item.group_name_tm, group_name_ru: item.group_name_ru }));
             navigate('/name');
         } else {
